@@ -12,7 +12,7 @@ import warnings  # Import warnings to manage warnings
 warnings.filterwarnings('ignore')  # Suppress warnings for cleaner output
 
 # Define the path to the CSV file containing the data
-path = r'.\input\Cancer_Data.csv'
+path = r'.\data\Cancer_Data.csv'
 
 # Read the CSV file into a pandas DataFrame
 df = pd.read_csv(path)
