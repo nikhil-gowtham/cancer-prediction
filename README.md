@@ -12,9 +12,11 @@ This is an application to predict a cancer patient's diagnosis as "M" (Malignant
 ## Steps to run locally
 The application can be run locally using docker, please use the below commands
 1. Build docker image:
-    docker build -t cancer-predict-app .
+
+   docker build -t cancer-predict-app .
 2. Run the app:
-    docker run -p 8080:8080 cancer-predict-app
+
+   docker run -p 8080:8080 cancer-predict-app
 
 Note: Within the container, the server runs on port 8080. If you want to map the port to a different one in your host machine, you need to update the above command accordingly. 
 
