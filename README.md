@@ -9,7 +9,7 @@ This is an application to predict a cancer patient's diagnosis as "M" (Malignant
 - DVC
 - MLFlow
 
-## Steps to run locally
+## Steps to run in local environment
 The application can be run locally using docker, please use the below commands
 1. Build docker image:
 
