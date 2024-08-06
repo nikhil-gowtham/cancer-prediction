@@ -3,6 +3,9 @@ import pickle
 import flask
 import numpy as np
 
+import warnings
+warnings.filterwarnings("ignore")
+
 app = flask.Flask(__name__)
 
 # load model, scaler and label encoder
