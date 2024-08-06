@@ -35,7 +35,7 @@ def predict_single():
 
     try:
         input_data = np.array(input_data).reshape(1, 30)
-        input_data = input_data.astype(np.float_)
+        input_data = input_data.astype(np.float64)
     except Exception as ex:
         print("Exception occurred while pre-processing data: ", ex)
         return flask.render_template("invalid_data.html")
