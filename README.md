@@ -1,4 +1,4 @@
-# Cancer Prediction
+# Cancer Prediction Application
 This is an application to predict a cancer patient's diagnosis as "M" (Malignant - Benign) or "B" (Benign - Malignant) using the visual characteristics of the cancer and the average values of these characteristics.
 
 ## Tools Used
