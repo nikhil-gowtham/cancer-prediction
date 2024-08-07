@@ -21,22 +21,6 @@ jobs:
         run: |
           pylint app
 
-  # test:
-  #   runs-on: ubuntu-latest
-  #   needs: lint
-  #   steps:
-  #     - uses: actions/checkout@v4
-  #     - name: Set up Python
-  #       uses: actions/setup-python@v4
-  #       with:
-  #         python-version: '3.11.4'
-  #     - name: Install dependencies
-  #       run: |
-  #         pip install -r requirements.txt  
-  #     - name: Run tests
-  #       run: |
-  #         pytest test/test_app.py
-
   test:
     runs-on: ubuntu-latest
     steps:
@@ -51,10 +35,8 @@ jobs:
 
       - name: Run tests
         run: |
-          docker run --rm cancer-prediction-app test_script.py
-
-  
-
+          docker run --rm cancer-prediction-app test_app.py
+          
   build:
     runs-on: ubuntu-latest
     needs: test
