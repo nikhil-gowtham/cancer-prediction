@@ -21,3 +21,5 @@ The application can be run locally using docker, please use the below commands
 Note: Within the container, the server runs on port 8080. If you want to map the port to a different one in your host machine, you need to update the above command accordingly. 
 
 E.g. if you want to run it on port 5000 in the host machine, please use docker run -p 5000:8080 cancer-predict-app
+
+version: 1.0.0
