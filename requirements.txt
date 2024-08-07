@@ -1,9 +1,12 @@
 astroid==3.2.4
 blinker==1.8.2
+certifi==2024.7.4
+charset-normalizer==3.3.2
 click==8.1.7
 colorama==0.4.6
 dill==0.3.8
 Flask==3.0.3
+idna==3.7
 iniconfig==2.0.0
 isort==5.13.2
 itsdangerous==2.2.0
@@ -17,8 +20,10 @@ platformdirs==4.2.2
 pluggy==1.5.0
 pylint==3.2.6
 pytest==8.3.2
+requests==2.32.3
 scikit-learn==1.5.1
 scipy==1.14.0
 threadpoolctl==3.5.0
 tomlkit==0.13.0
+urllib3==2.2.2
 Werkzeug==3.0.3
