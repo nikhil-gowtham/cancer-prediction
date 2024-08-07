@@ -35,7 +35,7 @@ jobs:
 
       - name: Run container
         run: |
-          docker run --rm -p 8080:8080 cancer-prediction-app python app/test_app.py
+          docker run --rm -p 8080:8080 cancer-prediction-app python test_app.py
           
       # - name: Run tests
       #   run: |
