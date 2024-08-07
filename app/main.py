@@ -32,6 +32,7 @@ def predict_single():
     """
     This API preprocesses the input and predicts the output
     """
+    print("Predict diagnosis API called")
     # read input
     input_data = flask.request.form.to_dict()["input_data"]
     input_data = input_data.replace(" ", "").split(",")
@@ -45,16 +46,20 @@ def predict_single():
         response = flask.make_response(html_content, 400)
         return response
     # apply standard scaler
+    print("Applying standard scaler on input")
     scaled_features = scaler.transform(input_data)
 
     # make prediction
+    print("Making prediction")
     prediction = model.predict(scaled_features)
 
     # decode prediction label
+    print("Decoding to actual label")
     prediction_label = label_encoder.inverse_transform(prediction)
 
     # respose as per prediction
     if prediction_label[0] == "B":
+        print("Predicted label: 'B'")
         return flask.render_template("diagnosis_b.html")
-
+    print("Predicted label: 'M'")
     return flask.render_template("diagnosis_m.html")
