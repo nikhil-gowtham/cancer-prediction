@@ -44,7 +44,7 @@ jobs:
 
       - name: Build Docker image (optional)
         # Uncomment this section if you want to build the image within the pipeline
-        # run: docker build -t cancer-prediction-app .  
+        run: docker build -t cancer-prediction-app .  
 
       - name: Run tests
         run: docker run cancer-prediction-app python /app/test_app.py  # Replace with your test execution command
