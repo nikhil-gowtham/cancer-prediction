@@ -35,11 +35,11 @@ jobs:
 
       - name: Run container
         run: |
-          docker run -p 8080:8080 cancer-prediction-app
+          docker run --rm -p 8080:8080 cancer-prediction-app python app/test_app.py
           
-      - name: Run tests
-        run: |
-          python app/test_app.py
+      # - name: Run tests
+      #   run: |
+      #     python app/test_app.py
 
   build:
     runs-on: ubuntu-latest
