@@ -1,9 +1,11 @@
+"""Main module"""
+
 import pickle
+import warnings
 
 import flask
 import numpy as np
 
-import warnings
 warnings.filterwarnings("ignore")
 
 app = flask.Flask(__name__)
@@ -21,13 +23,14 @@ with open("dependencies/standard_scaler.pkl", "rb") as scaler_file:
 
 @app.route("/")
 def main_page():
+    """Root page"""
     return flask.render_template("index.html")
 
 
 @app.route("/predict", methods=["POST"])
 def predict_single():
     """
-    This function preprocesses the input and predicts the output
+    This API preprocesses the input and predicts the output
     """
     # read input
     input_data = flask.request.form.to_dict()["input_data"]
@@ -52,5 +55,5 @@ def predict_single():
     # respose as per prediction
     if prediction_label[0] == "B":
         return flask.render_template("diagnosis_b.html")
-    else:
-        return flask.render_template("diagnosis_m.html")
+
+    return flask.render_template("diagnosis_m.html")
