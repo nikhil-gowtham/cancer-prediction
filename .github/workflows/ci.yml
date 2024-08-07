@@ -30,12 +30,25 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
-      - name: Build Docker image
-        run: docker build -t cancer-prediction-app .
+      # - name: Build Docker image
+      #   run: docker build -t cancer-prediction-app .
+
+      # - name: Run tests
+      #   run: |
+      #     docker run --rm cancer-prediction-app app/test_app.py
+      - name: Install dependencies
+        run: pip install --no-cache-dir -r requirements.txt  # Replace with your dependency installation command
+
+      - name: Copy application code
+        run: cp -r app /app  # Copy app directory to container
+
+      - name: Build Docker image (optional)
+        # Uncomment this section if you want to build the image within the pipeline
+        # run: docker build -t cancer-prediction-app .  
 
       - name: Run tests
-        run: |
-          docker run --rm cancer-prediction-app app/test_app.py
+        run: docker run cancer-prediction-app python /app/test_app.py  # Replace with your test execution command
+
           
   build:
     runs-on: ubuntu-latest
