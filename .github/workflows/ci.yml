@@ -35,7 +35,7 @@ jobs:
 
       - name: Run tests
         run: |
-          docker run --rm cancer-prediction-app test_app.py
+          docker run --rm cancer-prediction-app app/test_app.py
           
   build:
     runs-on: ubuntu-latest
