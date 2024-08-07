@@ -41,8 +41,9 @@ def predict_single():
         input_data = input_data.astype(np.float64)
     except Exception as ex:
         print("Exception occurred while pre-processing data: ", ex)
-        return flask.render_template("invalid_data.html")
-
+        html_content = flask.render_template("invalid_data.html")
+        response = flask.make_response(html_content, 400)
+        return response
     # apply standard scaler
     scaled_features = scaler.transform(input_data)
 
